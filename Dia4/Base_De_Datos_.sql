@@ -1,10 +1,11 @@
 CREATE DATABASE AutoRental;
 USE AutoRental;
 
-drop database AutoRental;
+-- drop database AutoRental;
+-- drop table Vehiculo;
 
 CREATE TABLE Sucursal (
-    ID_Sucursal INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Sucursal INT NOT NULL PRIMARY KEY,
     Ciudad VARCHAR(100),
     Direccion VARCHAR(255),
     Telefono_Fijo VARCHAR(20),
@@ -13,13 +14,13 @@ CREATE TABLE Sucursal (
 );
 
 CREATE TABLE Ciudad (
-    ID_Ciudad INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Ciudad INT NOT NULL PRIMARY KEY,
     Nombre_Ciudad VARCHAR(100)
 );
 
 
 CREATE TABLE Empleado (
-    ID_Empleado INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Empleado INT NOT NULL PRIMARY KEY,
     Cedula VARCHAR(20),
     Nombres VARCHAR(100),
     Apellidos VARCHAR(100),
@@ -33,7 +34,7 @@ CREATE TABLE Empleado (
 );
 
 CREATE TABLE Cliente (
-	ID_Cliente INT AUTO_INCREMENT PRIMARY KEY,
+	ID_Cliente INT NOT NULL PRIMARY KEY,
     Cedula VARCHAR(20),
     Nombres VARCHAR(100),
     Apellidos VARCHAR(100),
@@ -45,7 +46,7 @@ CREATE TABLE Cliente (
 );
 
 CREATE TABLE Vehiculo (
-    ID_Vehiculo INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Vehiculo INT NOT NULL PRIMARY KEY,
     Tipo_Vehiculo VARCHAR(50),
     Placa VARCHAR(20),
     Referencia VARCHAR(50),
@@ -58,7 +59,7 @@ CREATE TABLE Vehiculo (
 );
 
 CREATE TABLE Alquiler (
-    ID_Alquiler INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Alquiler INT NOT NULL PRIMARY KEY,
     ID_Cliente INT,
     ID_Empleado INT,
     ID_Vehiculo INT,
